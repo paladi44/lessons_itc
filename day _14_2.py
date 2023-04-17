@@ -57,6 +57,15 @@
 # print(name)
 # //
 
+def decor (func):
+    def wrapper (*args, **kwargs):
+        return func (*args, **kwargs)
+    return wrapper
 
+@decor 
+def main (*args, **kwargs):
+    return sum(args), kwargs
 
-
+n = map(int, input('>>').split())
+n = [1,2,3,45,6,7,8]    
+print (main(*n, name = 'decor'))
